@@ -7,16 +7,17 @@ import { TeaMapper } from '@/app/teas/infrastructure';
 import { fetchTeaService } from '@/app/teas/application';
 import { TeaResponse } from '@/app/teas/infrastructure';
 
-export const getStaticProps: GetStaticProps<{ data: TeaResponse[] }> =
-  async () => {
-    const data = await fetchTeaService();
+export const getStaticProps: GetStaticProps<{
+  data: TeaResponse[];
+}> = async () => {
+  const data = await fetchTeaService();
 
-    return {
-      props: {
-        data,
-      },
-    };
+  return {
+    props: {
+      data,
+    },
   };
+};
 
 export default function Index({
   data,
@@ -26,9 +27,8 @@ export default function Index({
   const domainData = data.map(TeaMapper.toDomain);
   return (
     <ContentLayout
-      heading="Our beloved coffee"
-      subheading="Hand-picked, made with love, curated, call it what you want. But we
-    promise you, this will be the best coffee of your life."
+      heading="Just you, hot water and our tea"
+      subheading="No pesticies or artificial flavours. We promise!"
     >
       <TeaPage data={domainData} />
     </ContentLayout>
