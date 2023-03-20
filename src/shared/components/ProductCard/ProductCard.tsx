@@ -19,6 +19,7 @@ export const ProductCard: React.FC<Props> = ({ title, img, type }) => {
           height={200}
           className={`${!isImageLoaded ? 'animate-pulse' : ''}`}
           placeholder="blur"
+          loading="lazy"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mOM+QIAAbIBUl+3LQMAAAAASUVORK5CYII="
           onLoad={() => setIsImageLoaded(true)}
         />
