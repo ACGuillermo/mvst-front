@@ -10,6 +10,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx}',
     './src/shared/**/*.{js,ts,jsx,tsx}',
   ],
+  safelist: ['bg-arabic', 'bg-robusta'],
   darkMode: false,
   theme: {
     fontFamily: {},
@@ -42,5 +43,6 @@ module.exports = {
   variants: {
     extend: {},
   },
+
   plugins: [require('@tailwindcss/line-clamp')],
 };
